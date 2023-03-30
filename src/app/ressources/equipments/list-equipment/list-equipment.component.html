@@ -1,0 +1,31 @@
+<h1>Equipments List </h1>
+<div class="table-container">
+    <table>
+      <thead >
+        <tr>
+          <th>#</th>
+          <th>Equipment Name</th>
+          <th>Quantity</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let equipment of equipments  | paginate: { itemsPerPage: 5, currentPage: p }">
+        <tr>
+          <td>{{equipment.idEquipment}}</td>
+          <td>{{equipment.nomEquipment}}</td>
+          <td>{{equipment.quantity}}</td>
+          <td>{{equipment.description}}</td>
+          <td>
+            <button class="btn btn-edit" (click)="onEditEquipment(equipment)">Edit</button>
+            <button class="btn btn-delete" >Delete</button>
+          </td>
+        </tr>
+       
+      </tbody>
+      <div class="pagination">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </table>
+  </div>
+

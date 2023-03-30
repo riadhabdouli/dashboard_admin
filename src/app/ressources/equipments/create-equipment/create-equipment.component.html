@@ -1,0 +1,32 @@
+
+<h1>Create Equipment</h1>
+<br>
+<form [formGroup]="EquipmentForm">
+	<div class="input-form" [class.error]="EquipmentForm.controls['nomEquipment'].dirty && EquipmentForm.controls['nomEquipment'].touched  && EquipmentForm.hasError('required','nomEquipment')">
+		<input type="text" placeholder="Equipment Name" id="Equipment Name"  formControlName="nomEquipment"/>
+    </div>
+
+
+
+
+
+	<div class="input-form" [class.error]="EquipmentForm.controls['quantity'].dirty && EquipmentForm.controls['quantity'].touched  && EquipmentForm.hasError('required','quantity')">
+	     <input type="text" id="Quantity" placeholder="Quantity"   formControlName="quantity"/>
+	</div>
+
+
+
+
+
+
+	<div class="input-form" [class.error]="EquipmentForm.controls['description'].dirty && EquipmentForm.controls['description'].touched  && EquipmentForm.hasError('required','description')">
+	      <input type="text" id="Description" placeholder="Description" formControlName="description" />
+	</div>
+
+
+
+
+	<button type="submit" id="submit" (click)="submit()" class="button-green"> Add equipment</button>
+
+
+	</form>
